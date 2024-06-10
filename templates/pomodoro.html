@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Pomodoro Timer</title>
+</head>
+<body>
+    <div>
+        <h1 id="timer">25:00</h1>
+    </div>
+
+    <script>
+        function countdown() {
+            var timerDisplay = document.getElementById('timer');
+            var minutes = 25;
+            var seconds = 0;
+
+            var interval = setInterval(function() {
+                if (minutes === 0 && seconds === 0) {
+                    clearInterval(interval);
+                    timerDisplay.textContent = 'Time\'s up!';
+                } else {
+                    if (seconds === 0) {
+                        minutes--;
+                        seconds = 59;
+                    } else {
+                        seconds--;
+                    }
+                    timerDisplay.textContent = (minutes < 10 ? '0' : '') + minutes + ':' + (seconds < 10 ? '0' : '') + seconds;
+                }
+            }, 1000);
+        }
+
+        countdown();
+    </script>
+</body>
+</html>
