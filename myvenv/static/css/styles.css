@@ -24,6 +24,15 @@ body {
     font-size: 32px;
     color: #495057; /* Dark pastel grey */
     margin-bottom: 20px;
+    text-align: center;
+}
+
+.content {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
+    width: 100%;
 }
 
 .timer, .tasks {
@@ -84,7 +93,7 @@ body {
 }
 
 @media (max-width: 600px) {
-    .container {
+    .content {
         flex-direction: column;
         align-items: center;
     }

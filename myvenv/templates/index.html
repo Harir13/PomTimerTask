@@ -9,19 +9,21 @@
 <body>
     <div class="container">
         <h1 class="title">Pomodoro Time Tracker</h1>
-        <div class="timer">
-            <h1 id="timer">25:00</h1>
-        </div>
-        <div class="tasks">
-            <form action="{{ url_for('add_task') }}" method="POST">
-                <input type="text" name="task" placeholder="New Task">
-                <button type="submit">+</button>
-            </form>
-            <ul>
-                {% for task in tasks %}
-                    <li>{{ task['task'] }}</li>
-                {% endfor %}
-            </ul>
+        <div class="content">
+            <div class="timer">
+                <h1 id="timer">25:00</h1>
+            </div>
+            <div class="tasks">
+                <form action="{{ url_for('add_task') }}" method="POST">
+                    <input type="text" name="task" placeholder="New Task">
+                    <button type="submit">+</button>
+                </form>
+                <ul>
+                    {% for task in tasks %}
+                        <li>{{ task['task'] }}</li>
+                    {% endfor %}
+                </ul>
+            </div>
         </div>
     </div>
     <script src="{{ url_for('static', filename='js/script.js') }}"></script>
