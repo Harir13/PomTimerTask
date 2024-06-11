@@ -10,20 +10,27 @@ body {
 
 .container {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     border: 1px solid #d1e7dd; /* Light pastel green */
     padding: 20px;
     background: #ffffff; /* White */
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     max-width: 90%;
-    flex-wrap: wrap;
+    align-items: center;
+}
+
+.title {
+    font-size: 32px;
+    color: #495057; /* Dark pastel grey */
+    margin-bottom: 20px;
 }
 
 .timer, .tasks {
     margin: 20px;
     flex: 1;
     min-width: 250px;
+    text-align: center;
 }
 
 .timer h1 {
@@ -49,6 +56,8 @@ body {
 .tasks form {
     display: flex;
     align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
 }
 
 .tasks input {
