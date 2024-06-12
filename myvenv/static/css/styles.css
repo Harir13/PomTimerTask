@@ -1,9 +1,9 @@
 body {
     font-family: 'Arial', sans-serif;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
     align-items: center;
-    height: 100vh;
+    min-height: 100vh;
     margin: 0;
     background-color: #f0f4f8; /* Light pastel blue */
 }
@@ -11,12 +11,14 @@ body {
 .container {
     display: flex;
     flex-direction: column;
-    border: 1px solid #d1e7dd; /* Light pastel green */
+    border: 1px solid #66b3a6; /* Slightly darker pastel green */
     padding: 20px;
     background: #ffffff; /* White */
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     max-width: 90%;
+    width: 600px; /* Ensuring containers are of the same width */
+    margin: 20px 0; /* Adding margin to separate the sections */
     align-items: center;
 }
 
@@ -26,6 +28,52 @@ body {
     margin-bottom: 20px;
     text-align: center;
 }
+
+textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #66b3a6; /* Slightly darker pastel green */
+    border-radius: 5px;
+    font-size: 16px;
+    resize: vertical; /* Allow vertical resize but not horizontal */
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #b2dfdb; /* Pastel green */
+    color: #ffffff; /* White */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #66b3a6; /* Slightly darker pastel green */
+}
+
+.mermaid {
+    width: 100%;
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.mermaid .mermaid svg g rect {
+    width: 150px; /* Fixed width */
+    height: 80px; /* Fixed height */
+    rx: 5px; /* Rounded corners */
+    ry: 5px; /* Rounded corners */
+    fill: #b2dfdb; /* Pastel green */
+    stroke: #66b3a6; /* Slightly darker pastel green */
+    stroke-width: 1px;
+    filter: drop-shadow(0px 2px 4px rgba(0, 0, 0, 0.1)); /* Subtle shadow */
+}
+
+.mermaid .mermaid svg g rect:hover {
+    fill: #66b3a6; /* Slightly darker pastel green on hover */
+}
+
 
 .content {
     display: flex;
@@ -57,7 +105,7 @@ body {
 .tasks li {
     margin: 10px 0;
     padding: 10px;
-    background-color: #e2eafc; /* Light pastel blue */
+    background-color: #c8e6c9; /* Lighter pastel green */
     border-radius: 5px;
     color: #495057; /* Dark pastel grey */
 }
@@ -74,14 +122,14 @@ body {
     padding: 5px;
     font-size: 16px;
     flex: 1;
-    border: 1px solid #d1e7dd; /* Light pastel green */
+    border: 1px solid #66b3a6; /* Slightly darker pastel green */
     border-radius: 5px;
 }
 
 .tasks button {
     padding: 5px 10px;
     font-size: 16px;
-    background-color: #d1e7dd; /* Light pastel green */
+    background-color: #b2dfdb; /* Pastel green */
     border: none;
     border-radius: 5px;
     color: #ffffff; /* White */
@@ -89,7 +137,7 @@ body {
 }
 
 .tasks button:hover {
-    background-color: #b2dfdb; /* Slightly darker pastel green */
+    background-color: #66b3a6; /* Slightly darker pastel green */
 }
 
 @media (max-width: 600px) {
@@ -109,11 +157,4 @@ body {
     }
 
     .tasks input {
-        margin: 0 0 10px 0;
-        width: 100%;
-    }
-
-    .tasks button {
-        width: 100%;
-    }
-}
+        margin: 0 0 10

@@ -5,9 +5,24 @@ app = Flask(__name__)
 
 tasks = []
 
-@app.route('/')
+@app.route('/', methods=['GET', 'POST'])
 def index():
-    return render_template('index.html', tasks=tasks)
+    mermaid_code = ""
+    steps=""
+    if request.method == 'POST':
+        steps = request.form.get('steps')
+        mermaid_code = generate_mermaid_code(steps)
+    return render_template('index.html', tasks=tasks, mermaid_code=mermaid_code,steps=steps)
+
+@app.route('/add_task', methods=['POST'])
+def generate_mermaid_code(steps):
+    steps_list = [step.strip() for step in steps.split('\n') if step.strip()]
+    mermaid_code = "graph LR\n"
+    for i, step in enumerate(steps_list):
+        mermaid_code += f"    step{i}[{step}]\n"
+        if i < len(steps_list) - 1:
+            mermaid_code += f"    step{i} --> step{i+1}\n"
+    return mermaid_code
 
 @app.route('/add_task', methods=['POST'])
 def add_task():
